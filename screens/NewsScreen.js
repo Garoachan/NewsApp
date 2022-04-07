@@ -15,7 +15,6 @@ export default function NewsScreen({ navigation }) {
 
   const getNews = async () => {
     const response = await Axios.get(URI);
-    console.log(response);
     setNews(response.data.articles);
   };
 
@@ -28,7 +27,7 @@ export default function NewsScreen({ navigation }) {
             imageuri={item.urlToImage}
             title={item.title}
             subtext={item.publishedAt}
-            onPress={() => navigation.navigate("詳細ページ")}
+            onPress={() => navigation.navigate("詳細ページ", { article: item })}
           />
         )}
         keyExtractor={(item, index) => index.toString()}
