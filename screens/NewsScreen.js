@@ -6,7 +6,7 @@ import Axios from "axios";
 
 const URI = `https://newsapi.org/v2/top-headlines?country=jp&category=entertainment&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
-export default function NewsScreen() {
+export default function NewsScreen({ navigation }) {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export default function NewsScreen() {
             imageuri={item.urlToImage}
             title={item.title}
             subtext={item.publishedAt}
+            onPress={() => navigation.navigate("詳細ページ")}
           />
         )}
         keyExtractor={(item, index) => index.toString()}
