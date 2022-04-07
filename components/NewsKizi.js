@@ -1,11 +1,17 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 
 const NewsKizi = ({ imageuri, title, subtext }) => {
+  var date = new Date(subtext);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var koukaihiduke = year + "年" + month + "月" + day + "日";
+
   return (
     <View style={styles.box}>
       <View style={styles.mozibox}>
         <Text style={styles.Text}>{title}</Text>
-        <Text style={styles.subText}>{subtext}</Text>
+        <Text style={styles.subText}>{koukaihiduke}</Text>
       </View>
       <View style={styles.gazobox}>
         <Image
@@ -39,14 +45,12 @@ const styles = StyleSheet.create({
 
   mozibox: {
     flex: 1,
-    backgroundColor: "steelblue",
     padding: 16,
     justifyContent: "space-between",
   },
 
   gazobox: {
     width: 100,
-    backgroundColor: "powderblue",
   },
 
   Text: {
