@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Image, FlatList } from "react-native";
+import { StyleSheet, View, Image, FlatList, SafeAreaView } from "react-native";
 import NewsKizi from "./components/NewsKizi";
 import Constants from "expo-constants";
 import Axios from "axios";
@@ -20,7 +20,7 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={news}
         renderItem={({ item }) => (
@@ -32,7 +32,7 @@ export default function App() {
         )}
         keyExtractor={(item, index) => index.toString()}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
