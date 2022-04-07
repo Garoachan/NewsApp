@@ -1,4 +1,4 @@
-// 3回目の修正！！
+// git,githubの復習
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 
