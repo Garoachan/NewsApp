@@ -9,23 +9,18 @@ const WeatherItem = ({ description, icon, name }) => {
       </View>
 
       <View style={styles.gazoBox}>
-        <Image style={{ width: 70, height: 70 }} source={{ url: icon }} />
+        <Image
+          style={{ width: 95, height: 95 }}
+          source={{ url: `http://openweathermap.org/img/wn/${icon}@2x.png` }}
+        />
         <Text style={styles.subText}>{description}</Text>
       </View>
     </View>
   );
 };
-
 export default WeatherItem;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
   box: {
     height: 100,
     width: "100%",
@@ -34,16 +29,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
 
-  moziBox: {
-    width: 250,
+  gazoBox: {
+    width: 200,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
   },
 
-  gazoBox: {
+  moziBox: {
     flex: 1,
-    padding: 15,
+    padding: 35,
     justifyContent: "center",
   },
 
@@ -54,6 +49,5 @@ const styles = StyleSheet.create({
   subText: {
     fontSize: 14,
     color: "darkblue",
-    paddingLeft: 15,
   },
 });
